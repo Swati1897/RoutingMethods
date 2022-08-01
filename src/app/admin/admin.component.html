@@ -1,0 +1,55 @@
+<p>admin works!</p>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="subadmin" >SubAdmin</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="dashboard"> Dashboard </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="list"> List </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="add"> Add </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="update/:id"> Update </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>  
+
+<router-outlet> </router-outlet>
+
+<!-- <app-subadmin></app-subadmin> -->
+<!-- <app-dashboard></app-dashboard> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-2" style="height:1000px; width:250px; background-color:aquamarine;">
+        col-md-2
+          <h3> Side Menu </h3>
+            
+              <app-subadmin></app-subadmin>
+    </div>
+    <div class="col-md-10" style="height:100px; width:53%; background-color:azure">
+         col-md-10
+          <h3> main contents </h3> 
+            
+              <app-dashboard></app-dashboard>
+    </div>
+  </div>
+</div> -->
+
+
+

@@ -1,0 +1,22 @@
+<p>user works!</p>
+<!-- <p> this component is for {{username}}</p>
+<p> {{surname}}</p> -->
+<div class="container" style="background-color:blanchedalmond;">
+    <h3> Path Params  (String)</h3>
+    <p> hey., i'm path parameter !!!</p>
+    <p> this component is for {{username}}</p>
+     <p> {{surname}}</p>
+      
+      <p> my name is <b> {{pathParams.usrNm}} {{pathParams.surNm}}</b>.I am from <b>{{pathParams.city}}</b>,
+       <b>{{pathParams.country}}</b> ,from <b>{{pathParams.pincode}} </b> ..........!!</p>
+</div>
+
+<div class="container" style="background-color:coral;">
+    <h3> Query Params (Silent)</h3>
+    <p> hey., i'm Query parameter !!!</p>
+
+    <p> my name is <b>{{queryParams.usrNm}} {{queryParams.surNm}}</b>.I am from <b>{{queryParams.city}} </b>,
+        <b>{{queryParams.country}}</b>..........!!</p>
+
+        <!-- user?usrNm=shilpa&surNm=shukla&city=pune&country=us -->
+</div>

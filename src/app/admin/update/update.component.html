@@ -1,0 +1,56 @@
+
+<div class="row">
+  <form *ngIf="productDetails" [formGroup]="updateProductForm" (submit)="onFormSubmit()"> <!--(submit)="onFormSubmit()" import FormsModule, ReactiveFormsModule -->
+   
+    {{updateProductForm.value | json }}
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"> Title</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1"
+        placeholder="enter product title"
+        formControlName="title">
+      <!-- <p class="text-danger" *ngIf="updateProductForm.get('title')?.hasError('required')">  -->
+      <!-- This field is required.</p>       -->
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        formControlName="description"></textarea>
+
+      <!-- <p class="text-danger" *ngIf="productForm.get('description')?.hasError('required')"> 
+          This field is required.</p> -->
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"> Price </label>
+      <input type="email" class="form-control" id="exampleFormControlInput1"
+        placeholder="enter product price"
+        formControlName="price">
+    </div>
+    <br>
+    <p> Cagetory</p>
+    <select class="form-select" aria-label="Default select example"
+      formControlName="category">
+      <option selected>Select Cagetory </option>
+      <option value="cloth"> Cloths </option>
+      <option value="elecctronics"> Electronics </option>
+      <option value="watches"> Watches </option>
+    </select>
+    <br> <br>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"> Image URL
+      </label>
+      <input type="email" class="form-control" id="exampleFormControlInput1"
+        placeholder="enter product image url" formControlName="image">
+
+      <!-- <p class="text-danger" *ngIf="productForm.get('image')?.hasError('required')"> 
+        This field is required.</p> -->
+    </div>
+
+    <div class="d-grid gap-2 col-4 mx-auto text-center">
+      <button class="btn btn-success" type="submit"> Submit </button>
+    </div>
+    <!-- [disabled]="productForm.invalid" -->
+  </form>
+</div>
