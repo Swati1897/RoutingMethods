@@ -25,8 +25,7 @@ export class UpdateComponent implements OnInit {
     // initialzing the form
     this.updateProductForm = this.formBuilder.group({
       title: [
-        // this.updateProductForm.value.title,
-         '  ',
+        '  ',
         [
           Validators.minLength(3),
           Validators.required,
@@ -48,20 +47,23 @@ export class UpdateComponent implements OnInit {
     console.log(this.productDetails);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.currentRouter.params.subscribe((data) => {
-      console.log('*******************', data);
-      this.productId = data['data']; //id ham API se liye hai
-      //  this.getSingleProduct();
-
-      this.commonSer
-        .fetchSingleProducts(this.productId)
-        .subscribe((productDetails: any) => {
-          console.log('productDetails', productDetails);
-          this.productDetails = productDetails['data']; //data featch ke liye,vahi data ko vahi data me assign karna hai  a = a ;
-          this.setFormValues();
-        });
+      this.productId = data['id']; //id ham API se liye hai
+      this.getSingleproduct();
+      console.log(this.productId);
     });
+  }
+
+  getSingleproduct() {
+    console.log('single data! ');
+    this.commonSer
+      .fetchSingleProducts(this.productId)
+      .subscribe((productDetails: any) => {
+        console.log('productDetails', productDetails);
+        this.productDetails = productDetails['id']; //data featch ke liye,vahi data ko vahi data me assign karna hai  a = a ;
+        this.setFormValues();
+      });
   }
 
   setFormValues() {
@@ -84,15 +86,13 @@ export class UpdateComponent implements OnInit {
       ],
       price: [
         this.productDetails.value.price,
-         Validators.required],
+        Validators.required],
       category: [
         this.productDetails.value.category,
-        // this.productDetails.controls['category'].setValue(this.productDetails.value.category), 
         Validators.required],
 
       image: [
         this.productDetails.value.image,
-        // this.productDetails.controls['image'].setValue(this.productDetails.value.image),
         Validators.required],
     });
   }

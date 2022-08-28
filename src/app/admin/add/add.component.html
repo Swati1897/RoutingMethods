@@ -1,51 +1,55 @@
 <p>add works!</p>
 
 <div class="row">
-  <form [formGroup]="productForm" (submit)="onFormSubmit()">    <!--import FormsModule, ReactiveFormsModule -->
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"> Title</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter product title"
-            formControlName="title">
-      <p class="text-danger" *ngIf="productForm.get('title')?.hasError('required')"> 
-        This field is required.</p>      
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-        formControlName="description"></textarea>
-        
-        <!-- <p class="text-danger" *ngIf="productForm.get('description')?.hasError('required')"> 
-          This field is required.</p> -->
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"> Price </label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" enter product price"
-            formControlName="price">
-      </div>
-<br>
-  <p> Cagetory</p>
-        <select class="form-select" aria-label="Default select example" formControlName="category"> 
-          <option selected>Select Cagetory </option>
-          <option value="1"> Cloths </option>
-          <option value="2"> Electronics </option>
-          <option value="3"> Watches </option>
-        </select>
-<br> <br> 
+  <form [formGroup]="productForm" (submit)="onFormSubmit()">
+    <!--import FormsModule, ReactiveFormsModule -->
     <div class="mb-3">
-       <label for="exampleFormControlInput1" class="form-label"> Image URL </label>
-       <input type="email" class="form-control" id="exampleFormControlInput1" 
-       placeholder="enter product image url"  formControlName="image">
-
-       <!-- <p class="text-danger" *ngIf="productForm.get('image')?.hasError('required')"> 
-        This field is required.</p> -->
+      <label for="exampleFormControlInput1" class="form-label"> Title</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter product title"
+        formControlName="title">
+      <p class="text-danger" *ngIf="productForm.get('title')?.hasError('required')">
+        This field is required.</p>
     </div>
 
-    <div class="d-grid gap-2 col-4 mx-auto text-center">
-        <button class="btn btn-success"  type="submit"> Submit </button>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
+
+      <!-- <p class="text-danger" *ngIf="productForm.get('description')?.hasError('required')"> 
+          This field is required.</p> -->
     </div>
-  <!-- [disabled]="productForm.invalid" -->
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"> Price </label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" enter product price"
+        formControlName="price">
+    </div>
+    <br>
+    <p> Cagetory</p>
+    <select class="form-select" aria-label="Default select example" formControlName="category">
+      <option selected>Select Cagetory </option>
+      <option value="1"> Cloths </option>
+      <option value="2"> Electronics </option>
+      <option value="3"> Watches </option>
+    </select>
+    <br> <br>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"> Image URL </label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter product image url"
+        formControlName="image">
+        <!-- <p class="text-danger" *ngIf="productForm.get('image')?.hasError('required')"> 
+              This field is required.</p> -->
+    </div>
+      <!-- <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"> Photo </label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" 
+      placeholder="enter product photo "  formControlName="photo">
+     </div> -->
+  
+     <div class="d-grid gap-2 col-4 mx-auto text-center">
+      <button class="btn btn-success" type="submit"> Submit </button>
+    </div>
+    <!-- [disabled]="productForm.invalid" -->
   </form>
 </div>
 

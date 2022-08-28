@@ -20,7 +20,6 @@ import { UserComponent } from './Components/user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductComponent } from './Components/products/product/product.component';
 import { AddProductComponent } from './Components/products/add-product/add-product.component';
-import { ServicesComponent } from './services/services.component';
 import { ListComponentComponent } from './Components/products/list-component/list-component.component';
 import { SubadminComponent } from './admin/subadmin/subadmin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -48,7 +47,6 @@ import { UpdateComponent } from './admin/update/update.component';
     AdminComponent,
     ProductComponent,
     AddProductComponent,
-    ServicesComponent,
     ListComponentComponent,
     SubadminComponent,
     DashboardComponent,

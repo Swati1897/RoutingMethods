@@ -20,14 +20,14 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.commonSer.fetchProducts().subscribe((data: any) => {
       console.log('product list', data);
-      this.products = data['Result']; // result hame API se liya hai , sare data wahape store hai.
+      this.products = data['Result']; // result ham ne API se liya hai , sare data wahape store hai.
       // this.products = data.products;
     });
   }
 
   onUpdate(productId: string) {
     console.log('productId', productId);
-    this.router.navigate(['update', 'data'], {
+    this.router.navigate(['../update', productId], {
       relativeTo: this.currentRouter,
     });
   }

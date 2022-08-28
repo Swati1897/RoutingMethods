@@ -9,7 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add.component.css'],
 })
 export class AddComponent implements OnInit {
-  //1) 1.1) image
+  // 1) 1.1) image as convert to (photo example)
+  photoSrc :any= [];
   imageSrc: any = [];
 
   productResult: any = [];
@@ -48,7 +49,7 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {}
 
   // 1) 1.2)
-  //   onFileChange(event:any) {
+ //   onFileChange(event:any) {
   //    console.log('event', event)
   //    const reader = new FileReader();
 
@@ -58,6 +59,21 @@ export class AddComponent implements OnInit {
 
   //      reader.onload = () => {
   //        this.imageSrc = reader.result as string ;
+  //      }
+  //     }
+  //  }
+
+  // 1) 1.2) 
+  //  onFileChange(event:any) {
+  //    console.log('event', event)
+  //    const reader = new FileReader();
+
+  //    if(event.target.files && event.target.files.length){
+  //      const [file] = event.target.files ;
+  //      reader.readAsDataURL (file);
+
+  //      reader.onload = () => {
+  //        this.photoSrc = reader.result as string ;
   //      }
   //     }
   //  }

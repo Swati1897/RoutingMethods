@@ -1,8 +1,6 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs/Observable';
-// import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -14,14 +12,14 @@ export class CommonService {
 
   private readonly baseURL: string = 'http://localhost:4000/api';
   private readonly getProductsURL: string = '/products'; //All data
-  private readonly getProductURL: string = '/product'; //for single products
+  private readonly getProductURL: string = '/product/:id'; //for single products
   private readonly postProductsURL: string = '/items';
-  private readonly putProductsURL: string = '/update';
+  private readonly putProductsURL: string = '/update/:id';
   private readonly deleteProductsURL: string = '/delete';
 
   //dependencies injections
   constructor(private http: HttpClient) {}
-  //endpoint/url dmfklsd
+  //endpoint/url 
   fetchProducts() {
     //1st method ;=>  1st way to get the product.
     // return this.http.get('https://fakestoreapi.com/products',{
@@ -33,13 +31,17 @@ export class CommonService {
     return this.http.get(`${this.baseURL}${this.getProductsURL}`, {
       headers: {
         'content-type': 'application/json',
-      },
+      }
     });
     //3rd method ;=> 3rd way to get the product.
     // return this.http.get(this.baseURL + '/swati' + this.getProductsURL);
   }
   fetchSingleProducts(productId: any) {
-    return this.http.get(`${this.baseURL}${this.getProductURL}/${productId}`,productId);
+    console.log(productId);
+    console.log(this.baseURL);
+    console.log(this.getProductURL);
+    return this.http.get(`${this.baseURL}${this.getProductURL}/${productId}`);
+    
   }
   // onTabClick(routerName: string){
   //   console.log('routerName', routerName);
@@ -50,22 +52,18 @@ export class CommonService {
     // return this.http.get('https://fakestoreapi.com/products');
     // return this.http.post(`${this.baseURL} ${ this.getProductsURL}`,JSON.stringify(productBody));
     return this.http.post(
-      `${this.baseURL}${this.getProductsURL}${this.postProductsURL}`,
-      productBody
-    );
+      `${this.baseURL}${this.getProductsURL}${this.postProductsURL}`, productBody);
   }
 
   putProduct(productId: any, productBody: any) {
+    console.log(productId);
+    console.log(this.baseURL);
     return this.http.put(
-      `${this.baseURL}${this.getProductsURL}${this.putProductsURL}/${productId}`,productId,
-      productBody
-    );
+      `${this.baseURL}${this.getProductsURL}${this.putProductsURL}/${productId}`,productBody);
   }
 
   deleteProduct(productId: any, productBody: any) {
     return this.http.delete(
-      `${this.baseURL}${this.getProductsURL}${this.deleteProductsURL}/${productId}`,
-      productBody
-    );
+      `${this.baseURL}${this.getProductsURL}${this.deleteProductsURL}/${productId}`, productBody);
   }
 }
