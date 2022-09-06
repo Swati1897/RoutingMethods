@@ -12,9 +12,7 @@ export class UpdateComponent implements OnInit {
   productId: any = [];
 
   productDetails: any = {};
-  // pathParams: any ={ };
   updateProductForm: FormGroup;
-  // update :any ={} ;
 
   constructor(
     private formBuilder: FormBuilder,

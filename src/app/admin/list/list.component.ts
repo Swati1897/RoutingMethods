@@ -34,6 +34,7 @@ export class ListComponent implements OnInit {
 
   onDelete(productId: string) {
     console.log('productId', productId);
-    this.router.navigate(['delete', 'id'], { relativeTo: this.currentRouter });
+    this.router.navigate(['delete', 'id'], 
+    { relativeTo: this.currentRouter });
   }
 }
