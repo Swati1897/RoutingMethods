@@ -12,9 +12,9 @@ export class CommonService {
 
   private readonly baseURL: string = 'http://localhost:4000/api';
   private readonly getProductsURL: string = '/products'; //All data
-  private readonly getProductURL: string = '/product/:id'; //for single products
+  private readonly getProductURL: string = '/product'; //for single products
   private readonly postProductsURL: string = '/items';
-  private readonly putProductsURL: string = '/update/:id';
+  private readonly putProductsURL: string = '/update/';
   private readonly deleteProductsURL: string = '/delete';
 
   //dependencies injections

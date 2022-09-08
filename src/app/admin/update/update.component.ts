@@ -97,6 +97,7 @@ export class UpdateComponent implements OnInit {
 
   onFormSubmit() {
     console.log('Form', this.updateProductForm.value);
+    console.log(this.productId);
     const body = {
       title: this.updateProductForm.value.title,
       description: this.updateProductForm.value.description,
